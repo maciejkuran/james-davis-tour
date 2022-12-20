@@ -1,0 +1,55 @@
+h1 {
+  margin-bottom: 2rem;
+}
+
+.header {
+  position: relative;
+}
+
+.header__h1--red {
+  color: var(--color-red);
+  filter: blur(1.5px);
+}
+
+.header__h1--white {
+  text-shadow: 0px 4px 4px rgba(28, 28, 28, 0.25);
+  filter: blur(0.4px);
+}
+
+.header__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__squares {
+  position: absolute;
+  top: -2rem;
+  left: -6rem;
+}
+
+.header__squares__square {
+  height: 40px;
+  width: 40px;
+  filter: blur(2px);
+}
+
+.header__squares__square--black {
+  background-color: black;
+  transform: translate(-50%, -50%);
+}
+
+.header__squares__square--red {
+  background-color: var(--color-red);
+}
+
+@media (max-width: 929px) {
+  h1 {
+    text-align: center;
+    font-size: 4rem;
+  }
+
+  .header__squares {
+    display: none;
+  }
+}

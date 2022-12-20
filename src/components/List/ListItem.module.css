@@ -1,0 +1,109 @@
+.list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid grey;
+}
+
+.list__text {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.list__text--date {
+  color: var(--color-red);
+  margin-left: 2rem;
+}
+
+.list__text--address {
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.list__text--cost {
+  font-size: 1.5rem;
+}
+
+.list__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10rem;
+}
+
+.list__wrapper form input {
+  margin-left: 1rem;
+}
+
+.list__wrapper div {
+  margin-right: 2rem;
+}
+
+.list__wrapper__internal {
+  position: relative;
+}
+
+.list__button--tooltip {
+  position: absolute;
+  top: -15%;
+  left: -5%;
+}
+
+svg {
+  font-size: 2rem;
+  color: var(--color-red);
+  left: 0;
+}
+
+@media (max-width: 1024px) {
+  .list {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list__wrapper {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 583px) {
+  .list__wrapper {
+    margin-left: auto;
+  }
+
+  .list__text {
+    font-size: 1.5rem;
+    font-weight: 800;
+  }
+}
+
+@media (max-width: 532px) {
+  .list__button--tooltip {
+    position: absolute;
+    top: -5%;
+    left: 35%;
+  }
+}
+
+@media (max-width: 451px) {
+  .list__wrapper {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .list__wrapper div {
+    margin-right: 0.5rem;
+  }
+
+  .list__wrapper button {
+    margin-top: 3rem;
+  }
+
+  .list__button--tooltip {
+    position: absolute;
+    top: -52%;
+    left: 0%;
+  }
+}

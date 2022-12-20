@@ -1,0 +1,46 @@
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.nav__internal-wrapper {
+  max-width: 120rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  padding: 2rem 1rem;
+}
+
+h3 {
+  font-size: 2.4rem;
+}
+
+svg {
+  font-size: 3rem;
+  color: white;
+}
+
+.nav__cart {
+  position: relative;
+}
+
+.nav__cart__amount-label {
+  position: absolute;
+  top: -1.5rem;
+  left: -3rem;
+  background-color: var(--color-red);
+  padding: 0.5rem 1rem;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: white;
+}
+
+@media (max-width: 500px) {
+  h3 {
+    font-size: 1.8rem;
+  }
+}

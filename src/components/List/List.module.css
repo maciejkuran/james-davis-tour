@@ -1,0 +1,30 @@
+.container {
+  margin-top: 10rem;
+  max-height: 70rem;
+  overflow-y: auto;
+  margin: 0 1rem;
+  max-width: 120rem;
+  z-index: 3;
+}
+
+.list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 4rem;
+}
+
+h2 {
+  filter: blur(1px);
+  text-align: center;
+  color: rgba(255, 255, 255, 0.768);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 496px) {
+  .container {
+    margin-top: 8rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+}
