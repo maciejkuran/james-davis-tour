@@ -1,8 +1,13 @@
 import classes from './HomeHeader.module.css';
 
 import PrimaryButton from '../UI/PrimaryButton';
+import { ModulesSwitcherContext } from '../../store/ModulesSwitcherProvider';
+
+import { useContext } from 'react';
 
 const HomeHeader = () => {
+  const modulesContext = useContext(ModulesSwitcherContext);
+
   return (
     <header className={classes.header}>
       <h1>
@@ -25,7 +30,7 @@ const HomeHeader = () => {
         ></div>
       </div>
       <div className={classes['header__button']}>
-        <PrimaryButton>BUY TICKETS</PrimaryButton>
+        <PrimaryButton onClick={modulesContext.onShowTourList}>BUY TICKETS</PrimaryButton>
       </div>
     </header>
   );

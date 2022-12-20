@@ -1,3 +1,7 @@
+.cart {
+  z-index: 3;
+}
+
 .cart h2 {
   text-align: center;
   font-size: 5rem;
@@ -24,4 +28,19 @@
 
 .cart__button {
   margin-left: 2rem;
+}
+
+@media (max-width: 575px) {
+  .cart {
+    margin: 0rem 1rem 0 1rem;
+    max-height: 50rem;
+    overflow-y: auto;
+  }
+  .cart__button {
+    margin-top: 2rem;
+  }
+
+  .cart__wrapper__internal {
+    flex-wrap: wrap;
+  }
 }

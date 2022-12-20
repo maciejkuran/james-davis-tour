@@ -4,8 +4,12 @@ import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 import PrimaryButton from '../UI/PrimaryButton';
 import Input from '../UI/Input';
+import { useRef } from 'react';
 
 const ListItem = props => {
+  const tooltipBtnRef = useRef();
+  console.log(tooltipBtnRef);
+
   return (
     <li className={classes.list}>
       <div>
@@ -22,7 +26,7 @@ const ListItem = props => {
 
       <div className={classes.list__wrapper}>
         <div className={classes['list__wrapper__internal']}>
-          <button className={classes['list__button--tooltip']} type="button">
+          <button ref={tooltipBtnRef} className={classes['list__button--tooltip']} type="button">
             <FontAwesomeIcon icon={faCircleInfo} />
           </button>
           <form>

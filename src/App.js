@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 
@@ -8,13 +7,19 @@ import HomeHeader from './components/Layout/HomeHeader';
 import TourList from './components/Tour/TourList';
 import Cart from './components/Cart/Cart';
 
+import { ModulesSwitcherContext } from './store/ModulesSwitcherProvider';
+
+import { useContext } from 'react';
+
 function App() {
+  const modulesContext = useContext(ModulesSwitcherContext);
+
   return (
     <Background>
       <Navbar></Navbar>
-      {/* <HomeHeader></HomeHeader> */}
-      {/* <TourList></TourList> */}
-      <Cart></Cart>
+      {modulesContext.header && <HomeHeader></HomeHeader>}
+      {modulesContext.tourList && <TourList></TourList>}
+      {modulesContext.cart && <Cart></Cart>}
     </Background>
   );
 }
