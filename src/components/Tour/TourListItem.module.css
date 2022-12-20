@@ -50,7 +50,7 @@
   left: -5%;
 }
 
-svg {
+.list__button--tooltip svg {
   font-size: 2rem;
   color: var(--color-red);
   left: 0;

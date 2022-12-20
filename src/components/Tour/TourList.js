@@ -1,7 +1,7 @@
-import classes from './List.module.css';
+import classes from './TourList.module.css';
 
 import Card from '../UI/Card';
-import ListItem from './ListItem';
+import TourListItem from './TourListItem';
 import Tooltip from '../UI/Tooltip';
 
 const List = () => {
@@ -9,8 +9,8 @@ const List = () => {
     <Card className={classes.container}>
       <h2>USA TOUR 2023</h2>
       <ul className={classes.list}>
-        <ListItem></ListItem>
-        <ListItem></ListItem>
+        <TourListItem buttonName="+ADD"></TourListItem>
+        <TourListItem buttonName="+ADD"></TourListItem>
       </ul>
 
       <Tooltip>

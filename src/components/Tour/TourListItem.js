@@ -1,11 +1,11 @@
-import classes from './ListItem.module.css';
+import classes from './TourListItem.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 import PrimaryButton from '../UI/PrimaryButton';
 import Input from '../UI/Input';
 
-const ListItem = () => {
+const ListItem = props => {
   return (
     <li className={classes.list}>
       <div>
@@ -58,7 +58,7 @@ const ListItem = () => {
           </form>
         </div>
 
-        <PrimaryButton attributes={{ type: 'submit' }}>+ADD</PrimaryButton>
+        <PrimaryButton attributes={{ type: 'submit' }}>{props.buttonName}</PrimaryButton>
       </div>
     </li>
   );

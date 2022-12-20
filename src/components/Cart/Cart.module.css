@@ -1,0 +1,27 @@
+.cart h2 {
+  text-align: center;
+  font-size: 5rem;
+}
+
+.cart__wrapper {
+  margin-top: 3rem;
+}
+
+.cart__wrapper p {
+  font-size: 2.4rem;
+  font-weight: 800;
+}
+
+.cart__wrapper p span {
+  color: var(--color-red);
+}
+
+.cart__wrapper__internal {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cart__button {
+  margin-left: 2rem;
+}
