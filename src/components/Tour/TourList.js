@@ -1,7 +1,8 @@
 import classes from './TourList.module.css';
+import { events } from '../../store/tourData';
 
 import Card from '../UI/Card';
-import TourListItem from './TourListItem';
+import ListItem from '../Layout/ListItem';
 import Tooltip from '../UI/Tooltip';
 import { useState } from 'react';
 
@@ -20,11 +21,20 @@ const List = () => {
     <Card className={classes.container}>
       <h2>USA TOUR 2023</h2>
       <ul className={classes.list}>
-        <TourListItem
-          onShowTooltip={showTooltipHandler}
-          onHideTooltip={hideTooltipHandler}
-          buttonName="+ADD"
-        ></TourListItem>
+        {events.map(event => {
+          return (
+            <ListItem
+              onShowTooltip={showTooltipHandler}
+              onHideTooltip={hideTooltipHandler}
+              buttonName="+ADD"
+              city={event.city}
+              date={event.date}
+              address={event.address}
+              vip={event.vip}
+              standard={event.standard}
+            ></ListItem>
+          );
+        })}
       </ul>
 
       {activeTooltip && (

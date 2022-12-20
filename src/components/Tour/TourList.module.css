@@ -1,6 +1,6 @@
 .container {
-  margin-top: 10rem;
-  max-height: 70rem;
+  margin-top: 8rem;
+  max-height: 50rem;
   overflow-y: auto;
   margin: 0 1rem;
   max-width: 120rem;
@@ -21,9 +21,6 @@ h2 {
 }
 
 @media (max-width: 496px) {
-  .container {
-    margin-top: 8rem;
-  }
   h2 {
     font-size: 3rem;
   }

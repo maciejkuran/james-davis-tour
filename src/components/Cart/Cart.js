@@ -1,7 +1,7 @@
 import classes from './Cart.module.css';
 
 import Card from '../UI/Card';
-import TourListItem from '../Tour/TourListItem';
+import ListItem from '../Layout/ListItem';
 import PrimaryButton from '../UI/PrimaryButton';
 
 import { ModulesSwitcherContext } from '../../store/ModulesSwitcherProvider';
@@ -14,7 +14,15 @@ const Cart = props => {
   return (
     <Card className={classes.cart}>
       <h2>Cart</h2>
-      <TourListItem buttonName="REMOVE"></TourListItem>
+      <ListItem
+        buttonName="+ADD"
+        city="Placeholder"
+        date="23 January"
+        address="Fałata 17"
+        vip="178"
+        standard="20"
+      ></ListItem>
+
       <div className={classes.cart__wrapper}>
         <p>
           TOTAL: <span>$185</span>

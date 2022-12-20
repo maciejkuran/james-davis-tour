@@ -1,32 +1,26 @@
-import classes from './TourListItem.module.css';
+import classes from './ListItem.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCircleInfo } from '@fortawesome/free-solid-svg-icons';
 
 import PrimaryButton from '../UI/PrimaryButton';
 import Input from '../UI/Input';
-import { useRef } from 'react';
 
 const ListItem = props => {
-  const tooltipBtnRef = useRef();
-  console.log(tooltipBtnRef);
-
   return (
     <li className={classes.list}>
       <div>
         <p>
-          <span className={`${classes.list__text}`}>HOUSTON</span>
+          <span className={`${classes.list__text}`}>{props.city}</span>
           <span className={`${classes.list__text} ${classes['list__text--date']}`}>
-            JAN 14 SAT, 8:00 PM
+            {props.date}
           </span>
         </p>
-        <p className={`${classes.list__text} ${classes['list__text--address']}`}>
-          The Harmony Opera House
-        </p>
+        <p className={`${classes.list__text} ${classes['list__text--address']}`}>{props.address}</p>
       </div>
 
       <div className={classes.list__wrapper}>
         <div className={classes['list__wrapper__internal']}>
-          <button ref={tooltipBtnRef} className={classes['list__button--tooltip']} type="button">
+          <button className={classes['list__button--tooltip']} type="button">
             <FontAwesomeIcon icon={faCircleInfo} />
           </button>
           <form>
@@ -41,7 +35,9 @@ const ListItem = props => {
                 }}
               ></Input>
             </div>
-            <span className={`${classes.list__text} ${classes['list__text--cost']}`}>$150</span>
+            <span className={`${classes.list__text} ${classes['list__text--cost']}`}>
+              ${props.vip}
+            </span>
           </form>
         </div>
 
@@ -58,7 +54,9 @@ const ListItem = props => {
                 }}
               ></Input>
             </div>
-            <span className={`${classes.list__text} ${classes['list__text--cost']}`}>$150</span>
+            <span className={`${classes.list__text} ${classes['list__text--cost']}`}>
+              ${props.standard}
+            </span>
           </form>
         </div>
 
