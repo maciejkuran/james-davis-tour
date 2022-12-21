@@ -8,6 +8,7 @@ import TourList from './components/Tour/TourList';
 import Cart from './components/Cart/Cart';
 
 import { ModulesSwitcherContext } from './store/ModulesSwitcherProvider';
+import TooltipContextProvider from './store/TooltipProvider';
 
 import { useContext } from 'react';
 
@@ -18,8 +19,11 @@ function App() {
     <Background>
       <Navbar></Navbar>
       {modulesContext.header && <HomeHeader></HomeHeader>}
-      {modulesContext.tourList && <TourList></TourList>}
-      {modulesContext.cart && <Cart></Cart>}
+
+      <TooltipContextProvider>
+        {modulesContext.tourList && <TourList></TourList>}
+        {modulesContext.cart && <Cart></Cart>}
+      </TooltipContextProvider>
     </Background>
   );
 }

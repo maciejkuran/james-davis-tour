@@ -4,7 +4,7 @@ import { forwardRef } from 'react';
 
 const Tooltip = forwardRef((props, ref) => {
   return (
-    <div ref={ref} className={classes.tooltip}>
+    <div ref={ref} className={`${classes.tooltip} ${classes[props.className]}`}>
       {props.children}
     </div>
   );
