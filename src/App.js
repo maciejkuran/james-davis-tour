@@ -9,6 +9,7 @@ import Cart from './components/Cart/Cart';
 
 import { ModulesSwitcherContext } from './store/ModulesSwitcherProvider';
 import TooltipContextProvider from './store/TooltipProvider';
+import CartContextProvider from './store/CartContextProvider';
 
 import { useContext } from 'react';
 
@@ -17,13 +18,15 @@ function App() {
 
   return (
     <Background>
-      <Navbar></Navbar>
-      {modulesContext.header && <HomeHeader></HomeHeader>}
+      <CartContextProvider>
+        <Navbar></Navbar>
+        {modulesContext.header && <HomeHeader></HomeHeader>}
 
-      <TooltipContextProvider>
-        {modulesContext.tourList && <TourList></TourList>}
-        {modulesContext.cart && <Cart></Cart>}
-      </TooltipContextProvider>
+        <TooltipContextProvider>
+          {modulesContext.tourList && <TourList></TourList>}
+          {modulesContext.cart && <Cart></Cart>}
+        </TooltipContextProvider>
+      </CartContextProvider>
     </Background>
   );
 }

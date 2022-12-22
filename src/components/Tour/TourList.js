@@ -1,7 +1,7 @@
 import classes from './TourList.module.css';
 import { events } from '../../store/tourData';
 import Card from '../UI/Card';
-import ListItem from '../Layout/ListItem';
+import TourListItem from './TourListItem';
 import Tooltip from '../UI/Tooltip';
 import { TooltipContext } from '../../store/TooltipProvider';
 import { useContext, useRef, useEffect, useState } from 'react';
@@ -22,16 +22,16 @@ const List = () => {
       <ul className={classes.list}>
         {events.map(event => {
           return (
-            <ListItem
+            <TourListItem
               tooltip={tooltipNodeLoaded}
-              buttonName="+ADD"
               city={event.city}
               date={event.date}
               address={event.address}
               vip={event.vip}
               standard={event.standard}
+              id={event.id}
               key={event.date}
-            ></ListItem>
+            ></TourListItem>
           );
         })}
       </ul>

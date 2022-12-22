@@ -7,6 +7,7 @@ class Event {
     this.address = address;
     this.vip = vip;
     this.standard = standard;
+    this.id = Math.round(Math.random() * 1000000);
     events.push(this);
   }
 

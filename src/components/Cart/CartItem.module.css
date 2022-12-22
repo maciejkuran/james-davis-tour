@@ -32,7 +32,7 @@
   margin-left: 10rem;
 }
 
-.list__wrapper form input {
+.list__wrapper div input {
   margin-left: 1rem;
 }
 
@@ -64,6 +64,7 @@
 
   .list__wrapper {
     margin-top: 2rem;
+    margin-left: auto;
   }
 }
 
@@ -79,26 +80,26 @@
 }
 
 @media (max-width: 532px) {
-  .list__button--tooltip {
-    position: absolute;
-    top: -5%;
-    left: 35%;
-  }
-}
-
-@media (max-width: 451px) {
   .list__wrapper {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
   }
 
-  .list__wrapper div {
-    margin-right: 0.5rem;
-  }
-
   .list__wrapper button {
     margin-top: 3rem;
+  }
+
+  .list__button--tooltip {
+    position: absolute;
+    top: -45%;
+    left: -5%;
+  }
+}
+
+@media (max-width: 451px) {
+  .list__wrapper div {
+    margin-right: 0.5rem;
   }
 
   .list__button--tooltip {

@@ -1,6 +1,6 @@
 import classes from './Cart.module.css';
 import Card from '../UI/Card';
-import ListItem from '../Layout/ListItem';
+import CartItem from '../Cart/CartItem';
 import PrimaryButton from '../UI/PrimaryButton';
 import Tooltip from '../UI/Tooltip';
 import { ModulesSwitcherContext } from '../../store/ModulesSwitcherProvider';
@@ -21,15 +21,14 @@ const Cart = props => {
   return (
     <Card className={classes.cart}>
       <h2>Cart</h2>
-      <ListItem
+      <CartItem
         tooltip={tooltipNodeLoaded}
-        buttonName="REMOVE"
         city="Placeholder"
         date="23 January"
         address="Fałata 17"
         vip="178"
         standard="20"
-      ></ListItem>
+      ></CartItem>
 
       <div className={classes.cart__wrapper}>
         <p>
