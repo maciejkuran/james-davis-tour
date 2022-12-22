@@ -5,11 +5,13 @@ import PrimaryButton from '../UI/PrimaryButton';
 import Tooltip from '../UI/Tooltip';
 import { ModulesSwitcherContext } from '../../store/ModulesSwitcherProvider';
 import { TooltipContext } from '../../store/TooltipProvider';
+import { CartContext } from '../../store/CartContextProvider';
 import { useContext, useRef, useEffect, useState } from 'react';
 
 const Cart = props => {
   const modulesContext = useContext(ModulesSwitcherContext);
   const tooltipContext = useContext(TooltipContext);
+  const cartContext = useContext(CartContext);
 
   const [tooltipNodeLoaded, setTooltipNodeLoaded] = useState('');
   const tooltipRef = useRef();
@@ -19,20 +21,32 @@ const Cart = props => {
   }, []);
 
   return (
-    <Card className={classes.cart}>
+    <Card className={`${classes.cart} ${props.className}`}>
       <h2>Cart</h2>
-      <CartItem
-        tooltip={tooltipNodeLoaded}
-        city="Placeholder"
-        date="23 January"
-        address="Fałata 17"
-        vip="178"
-        standard="20"
-      ></CartItem>
+
+      {cartContext.items.length > 0 ? (
+        cartContext.items.map(item => {
+          return (
+            <CartItem
+              tooltip={tooltipNodeLoaded}
+              city={item.city}
+              date={item.date}
+              address={item.address}
+              vipQuantity={item.vipQuantity}
+              standardQuantity={item.standardQuantity}
+              id={item.id}
+              total={item.total}
+              key={item.id}
+            ></CartItem>
+          );
+        })
+      ) : (
+        <p className={classes['cart__error']}>No items in your cart.</p>
+      )}
 
       <div className={classes.cart__wrapper}>
         <p>
-          TOTAL: <span>$185</span>
+          TOTAL: <span>${cartContext.total}</span>
         </p>
         <div className={classes['cart__wrapper__internal']}>
           <PrimaryButton

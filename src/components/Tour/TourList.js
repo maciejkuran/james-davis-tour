@@ -4,9 +4,10 @@ import Card from '../UI/Card';
 import TourListItem from './TourListItem';
 import Tooltip from '../UI/Tooltip';
 import { TooltipContext } from '../../store/TooltipProvider';
+
 import { useContext, useRef, useEffect, useState } from 'react';
 
-const List = () => {
+const TourList = props => {
   const tooltipContext = useContext(TooltipContext);
 
   const [tooltipNodeLoaded, setTooltipNodeLoaded] = useState('');
@@ -17,7 +18,7 @@ const List = () => {
   }, []);
 
   return (
-    <Card className={classes.container}>
+    <Card className={`${classes.container} ${props.className}`}>
       <h2>USA TOUR 2023</h2>
       <ul className={classes.list}>
         {events.map(event => {
@@ -48,4 +49,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default TourList;

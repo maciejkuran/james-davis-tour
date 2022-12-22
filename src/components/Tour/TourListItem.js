@@ -50,6 +50,8 @@ const TourListItem = props => {
       total: Number(150 * input.vip + 35 * input.standard),
     };
     //Make sure item is added if any of the values is not empty
+    if (input.vip === 0 && input.standard === 0) return;
+
     if (input.vip !== '' || input.standard !== '') cartContext.addItem(data);
   };
 
@@ -84,7 +86,6 @@ const TourListItem = props => {
             <div>
               <label className={classes.list__text}>VIP</label>
               <Input
-                value={input.vip}
                 onChange={inputVipHandler}
                 input={{
                   type: 'number',
@@ -105,7 +106,6 @@ const TourListItem = props => {
             <div>
               <label className={classes.list__text}>STANDARD</label>
               <Input
-                value={input.standard}
                 onChange={inputStandardHandler}
                 input={{
                   type: 'number',

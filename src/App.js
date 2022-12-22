@@ -20,11 +20,12 @@ function App() {
     <Background>
       <CartContextProvider>
         <Navbar></Navbar>
+
         {modulesContext.header && <HomeHeader></HomeHeader>}
 
         <TooltipContextProvider>
-          {modulesContext.tourList && <TourList></TourList>}
-          {modulesContext.cart && <Cart></Cart>}
+          <TourList className={modulesContext.tourList ? 'show' : ''}></TourList>
+          <Cart className={modulesContext.cart ? 'show' : ''}></Cart>
         </TooltipContextProvider>
       </CartContextProvider>
     </Background>

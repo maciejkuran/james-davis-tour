@@ -1,5 +1,8 @@
 .cart {
   z-index: 3;
+  display: none;
+  max-height: 60rem;
+  overflow-y: auto;
 }
 
 .cart h2 {
@@ -14,6 +17,8 @@
 .cart__wrapper p {
   font-size: 2.4rem;
   font-weight: 800;
+
+  margin-bottom: 2rem;
 }
 
 .cart__wrapper p span {
@@ -28,6 +33,10 @@
 
 .cart__button {
   margin-left: 2rem;
+}
+
+.cart__error {
+  font-size: 2rem;
 }
 
 @media (max-width: 575px) {

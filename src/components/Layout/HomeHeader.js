@@ -5,11 +5,11 @@ import { ModulesSwitcherContext } from '../../store/ModulesSwitcherProvider';
 
 import { useContext } from 'react';
 
-const HomeHeader = () => {
+const HomeHeader = props => {
   const modulesContext = useContext(ModulesSwitcherContext);
 
   return (
-    <header className={classes.header}>
+    <header className={`${classes.header} ${props.className}`}>
       <h1>
         <span className={classes['header__h1--red']}>LIVE IN THE MOMENT</span>
         <br></br>

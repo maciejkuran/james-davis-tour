@@ -19,13 +19,22 @@ const cartReducer = (state, action) => {
 
       if (uniqueItems.length === 0) {
         return { total: action.total, items: [action.item, ...uniqueItems] };
-      } else {
+      }
+
+      if (uniqueItems.length !== 0) {
         const uniqueItemsTotal = uniqueItems
           .map(item => item.total)
           .reduce((acc, val) => acc + val);
+
         return { total: uniqueItemsTotal + action.total, items: [action.item, ...uniqueItems] };
       }
     }
+  }
+
+  if (action.type === 'REMOVE') {
+    const remainingItems = state.items.filter(item => item.id !== action.id);
+
+    return { total: state.total - action.total, items: remainingItems };
   }
 };
 
@@ -36,8 +45,14 @@ const CartContextProvider = props => {
     dispatchCart({ type: 'ADD', item: item, total: item.total });
   };
 
+  const removeItem = (id, total) => {
+    dispatchCart({ type: 'REMOVE', id: id, total: total });
+  };
+
   return (
-    <CartContext.Provider value={{ items: cart, addItem: addItem, total: cart?.total }}>
+    <CartContext.Provider
+      value={{ items: cart.items, addItem: addItem, removeItem: removeItem, total: cart.total }}
+    >
       {props.children}
     </CartContext.Provider>
   );

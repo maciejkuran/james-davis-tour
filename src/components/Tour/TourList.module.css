@@ -1,10 +1,11 @@
 .container {
   margin-top: 8rem;
-  max-height: 50rem;
+  max-height: 60rem;
   overflow-y: auto;
   margin: 0 1rem;
   max-width: 120rem;
   z-index: 3;
+  display: none;
 }
 
 .list {
@@ -21,6 +22,9 @@ h2 {
 }
 
 @media (max-width: 496px) {
+  .container {
+    margin-top: 10rem;
+  }
   h2 {
     font-size: 3rem;
   }
