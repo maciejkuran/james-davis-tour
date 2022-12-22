@@ -3,11 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 
 import { ModulesSwitcherContext } from '../../store/ModulesSwitcherProvider';
+import { CartContext } from '../../store/CartContextProvider';
 
 import { useContext } from 'react';
 
 const Navbar = props => {
   const modulesContext = useContext(ModulesSwitcherContext);
+
+  const cartContext = useContext(CartContext);
 
   return (
     <nav className={classes.nav}>
@@ -16,7 +19,9 @@ const Navbar = props => {
         <div className={classes['nav__cart']}>
           <button onClick={modulesContext.onShowCart}>
             <FontAwesomeIcon icon={faCartShopping} />
-            <div className={classes['nav__cart__amount-label']}>1</div>
+            {cartContext.items.length >= 1 && (
+              <div className={classes['nav__cart__amount-label']}>{cartContext.items.length}</div>
+            )}
           </button>
         </div>
       </div>

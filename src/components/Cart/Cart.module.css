@@ -1,7 +1,7 @@
 .cart {
   z-index: 3;
   display: none;
-  max-height: 60rem;
+  max-height: 80vh;
   overflow-y: auto;
 }
 
@@ -42,8 +42,8 @@
 @media (max-width: 575px) {
   .cart {
     margin: 0rem 1rem 0 1rem;
-    max-height: 50rem;
     overflow-y: auto;
+    margin-top: 5rem;
   }
   .cart__button {
     margin-top: 2rem;

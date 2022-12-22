@@ -91,7 +91,7 @@ const TourListItem = props => {
                   type: 'number',
                   min: '1',
                   max: '5',
-                  placeholder: '1',
+                  placeholder: '0',
                 }}
               ></Input>
             </div>
@@ -111,7 +111,7 @@ const TourListItem = props => {
                   type: 'number',
                   min: '1',
                   max: '5',
-                  placeholder: '1',
+                  placeholder: '0',
                 }}
               ></Input>
             </div>
