@@ -6,4 +6,6 @@ It is my second React.js app made on my own, the purpose of which is to practice
 
 📷 Credit to Unsplash.com and its Artists for amazing photos.
 
+🎙[James Davis - LIVE](https://james-davis-tour.netlify.app/)
+
 <p align="center"><img src="/src/assets/img/ui.png"></p>
