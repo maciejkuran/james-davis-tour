@@ -3,6 +3,7 @@ import Card from '../UI/Card';
 import CartItem from '../Cart/CartItem';
 import PrimaryButton from '../UI/PrimaryButton';
 import Tooltip from '../UI/Tooltip';
+import CheckoutWarning from '../Checkout/CheckoutWarning';
 import { ModulesSwitcherContext } from '../../store/ModulesSwitcherProvider';
 import { TooltipContext } from '../../store/TooltipProvider';
 import { CartContext } from '../../store/CartContextProvider';
@@ -14,11 +15,20 @@ const Cart = props => {
   const cartContext = useContext(CartContext);
 
   const [tooltipNodeLoaded, setTooltipNodeLoaded] = useState('');
+  const [checkout, setCheckout] = useState(false);
   const tooltipRef = useRef();
 
   useEffect(() => {
     setTooltipNodeLoaded(tooltipRef.current);
   }, []);
+
+  const showCheckoutWarningHandler = () => {
+    setCheckout(true);
+  };
+
+  const closeCheckoutWarningHandler = () => {
+    setCheckout(false);
+  };
 
   return (
     <Card className={`${classes.cart} ${props.className}`}>
@@ -56,7 +66,11 @@ const Cart = props => {
           >
             BACK
           </PrimaryButton>
-          <PrimaryButton className={classes['cart__button']} attributes={{ type: 'submit' }}>
+          <PrimaryButton
+            onClick={showCheckoutWarningHandler}
+            className={classes['cart__button']}
+            attributes={{ type: 'submit' }}
+          >
             CHECKOUT
           </PrimaryButton>
         </div>
@@ -70,6 +84,7 @@ const Cart = props => {
           <li>Venue First Entry (where applicable)</li>
         </ul>
       </Tooltip>
+      {checkout && <CheckoutWarning onClick={closeCheckoutWarningHandler} />}
     </Card>
   );
 };

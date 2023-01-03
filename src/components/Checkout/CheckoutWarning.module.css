@@ -1,0 +1,19 @@
+.checkout-warning {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.733);
+  padding: 2rem;
+}
+
+.checkout-warning p {
+  margin-right: 1rem;
+}
+
+.checkout-warning svg {
+  font-size: 2rem;
+}
